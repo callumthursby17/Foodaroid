@@ -1,0 +1,200 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<title>Foodaroid</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
+    <!--SOME APPLE SEETINGS-->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+	<!--You need this although you do not need a physical reference as build will inject it in-->
+	 <script type="text/javascript" src="cordova.js"></script> 
+	<!--<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBjZ2ohixjzHcM6BNzZOOycGjg-Pt03seM=false"></script>--> 
+    
+    <!-- css files links --> 
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"/>
+    <link rel="stylesheet" href="css/foodAroid.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css"/>
+    <link rel="stylesheet" href="css/customcss.css"/>
+	
+    <!--link to other scripts in js folder, i.e locationtracker.js-->
+    <script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
+    <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+
+
+		
+	
+</head>
+<body>
+<!-- Start of Home page -->
+<div data-role="page" id="camera" data-theme="a">
+    <div data-role="header" data-add-back-btn="false"> <!-- Header Start -->
+        <h1>Foodaroid</h1>
+        
+      
+    </div> <!-- header end --> 
+    
+    <div data-role="content"> <!-- Start Content --> 
+        
+        <img src="ASSETS/images/cameraStart.png" height="427px" width="250px" alt="Camera Start Button" id="cameraStart" > 
+    </div> <!-- End Content --> 
+
+     <div data-role="footer"> <!-- Footer start -->
+     
+     	  <div data-role="navbar"  data-iconpos="top"> <!-- Start Nav Bar -->
+            <ul>
+                <li><a href="#search" data-transition="slide" data-direction="reverse" data-icon="search">Search</a></li>
+                <li><a href="#instagram" data-transition="slide" data-direction="reverse" data-icon="action">Insta</a></li>
+                <li><a href="#camera" data-transition="slide" data-icon="camera" class="ui-btn-active ui-state-persist">Camera</a></li> 
+                <li> <a href="#map" data-transition="slide" data-icon="location">Map</a></li>
+                <li> <a href="#myPhotos" data-transition="slide" data-icon="user">Me</a></li>
+            </ul>
+        </div> <!-- End Nav Bar --> 
+     
+     </div>   <!-- Footer end --> 
+    
+    
+</div> <!-- end of Home Page -->
+   
+   <!-- Start off My Photos page --> 
+    
+   <div data-role="page" id="myPhotos" data-theme="a">
+    <div data-role="header" data-add-back-btn="false"> <!-- Header Start -->
+        <h1>My Photos</h1>
+        
+      
+    </div> <!-- header end --> 
+    
+    <div data-role="content"> <!-- Start Content --> 
+        <h3>My Photos... </h3>
+        
+        <img src="ASSETS/images/foodGallery.jpg" height="350px" width="300px" id="foodGallery"/> 
+        
+    </div> <!-- End Content --> 
+
+     <div data-role="footer"> <!-- Footer start -->
+     
+     	  <div data-role="navbar"  data-iconpos="top"> <!-- Start Nav Bar -->
+            <ul>
+                <li><a href="#search" data-transition="slide" data-direction="reverse" data-icon="search">Search</a></li>
+                <li><a href="#instagram" data-transition="slide" data-direction="reverse" data-icon="action">Insta</a></li>
+                <li><a href="#camera" data-transition="slide" data-direction="reverse" data-icon="camera">Camera</a></li>
+                <li> <a href="#map" data-transition="slide" data-direction="reverse" data-icon="location">Map</a></li>
+                <li> <a href="#myPhotos" data-transition="slide" data-icon="user" class="ui-btn-active ui-state-persist">Me</a></li>
+            </ul>
+        </div> <!-- End Nav Bar --> 
+     
+     </div>   <!-- Footer end --> 
+    
+    
+</div> <!-- end of myPhotos Page -->
+
+<!-- Start of Map page -->
+<div data-role="page" id="map" data-theme="a">
+    <div data-role="header" data-add-back-btn="false"> <!-- Header Start -->
+        <h1>Map</h1>
+        
+      
+    </div> <!-- header end --> 
+    
+    <div data-role="content"> <!-- Start Content --> 
+       <img src="ASSETS/images/mapWithPin.jpg" height="427px" id="mapImage"/>
+    </div> <!-- End Content --> 
+
+     <div data-role="footer"> <!-- Footer start -->
+     
+     	  <div data-role="navbar"  data-iconpos="top"> <!-- Start Nav Bar -->
+            <ul>
+                <li><a href="#search" data-transition="slide" data-direction="reverse" data-icon="search">Search</a></li>
+                <li><a href="#instagram" data-transition="slide" data-direction="reverse" data-icon="action">Insta</a></li>
+                <li><a href="#camera" data-transition="slide" data-direction="reverse" data-icon="camera">Camera</a></li>
+                <li> <a href="#map" data-transition="slide" data-icon="location" class="ui-btn-active ui-state-persist">Map</a></li>
+                <li> <a href="#myPhotos" data-transition="slide" data-icon="user">Me</a></li>
+            </ul>
+        </div> <!-- End Nav Bar --> 
+     
+     </div>   <!-- Footer end --> 
+    
+    
+</div> <!-- end of Map Page -->
+   
+   <!-- Start off  share/IN page --> 
+    
+   <div data-role="page" id="instagram" data-theme="a">
+    <div data-role="header" data-add-back-btn="false"> <!-- Header Start -->
+        <h1>Instagram Share</h1>
+        
+      
+    </div> <!-- header end --> 
+    
+    <div data-role="content"> <!-- Start Content --> 
+        
+        <img src="ASSETS/images/instagram.jpg" width="150px" height="150px" alt="Instgram logo" id="instaLogo"/>
+        
+        <img src="ASSETS/images/login.jpg" id="loginForm"/> 
+    </div> <!-- End Content --> 
+
+     <div data-role="footer"> <!-- Footer start -->
+     
+     	  <div data-role="navbar"  data-iconpos="top"> <!-- Start Nav Bar -->
+            <ul>
+                <li><a href="#search" data-transition="slide" data-direction="reverse" data-icon="search">Search</a></li>
+                <li><a href="#instagram" data-transition="slide" data-icon="action" class="ui-btn-active ui-state-persist">Insta</a></li>
+                <li><a href="#camera" data-transition="slide" data-icon="camera">Camera</a></li>
+                <li> <a href="#map" data-transition="slide" data-icon="location">Map</a></li>
+                <li> <a href="#myPhotos" data-transition="slide" data-icon="user">Me</a></li>
+            </ul>
+        </div> <!-- End Nav Bar --> 
+     
+     </div>   <!-- Footer end --> 
+    
+    
+</div> <!-- end of share/ IN Page -->
+
+   <!-- Start off Search page --> 
+    
+   <div data-role="page" id="search" data-theme="a">
+    <div data-role="header" data-add-back-btn="false"> <!-- Header Start -->
+        <h1>Search</h1>
+        
+      
+    </div> <!-- header end --> 
+    
+    <div data-role="content"> <!-- Start Content --> 
+        
+        <h3>Search Images.... </h3>
+        
+        <img src="ASSETS/images/search-field.jpg" width="300px" id="searchBox"/>
+        
+        <ul id="hashtags">
+                <li>#Food</li>
+                <li>#Fish</li>
+            
+            </ul>
+        
+    </div> <!-- End Content --> 
+
+     <div data-role="footer"> <!-- Footer start -->
+     
+     	  <div data-role="navbar"  data-iconpos="top"> <!-- Start Nav Bar -->
+            <ul>
+                <li><a href="#search" data-transition="side" data-icon="search" class="ui-btn-active ui-state-persist">Search</a></li>
+                <li><a href="#instagram" data-transition="slide" data-icon="action">Insta</a></li>
+                <li><a href="#camera" data-transition="slide" data-icon="camera">Camera</a></li>
+                <li> <a href="#map" data-transition="slide" data-icon="location">Map</a></li>
+                <li> <a href="#myPhotos" data-transition="slide" data-icon="user">Me</a></li>
+            </ul>
+        </div> <!-- End Nav Bar --> 
+     
+     </div>   <!-- Footer end --> 
+    
+    
+</div> <!-- end of Search Page -->
+
+
+
+
+</body>
+</html>
