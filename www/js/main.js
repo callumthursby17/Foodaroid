@@ -82,36 +82,40 @@ var Long = undefined;
     }
     
     //Get map by using coordinates 
-    function getMap (lat, long){
+    function getMap (gotlat, gotlong){
+        
+         var latLong = {lat: gotlat,  lng: gotlong}; 
         
         var mapOptions = {
-            center: new google.maps.LatLng(0, 0),
+            center: latLong,
             zoom: 1,
-            mapTypeID: google.maps.mapTypeID.ROADMAP
+            mapTypeID: "hybrid"
         }; 
         
-        map = new google.maps.Map 
-        (document.getElementById("map"), mapOptions); 
+         var map = new google.maps.Map 
+        (document.getElementById('map'), mapOptions); 
         
-        var latLong = new google.maps.LatLng(Lat, Long); 
+       
         
         var marker = new google.maps.Marker({
-            postion: latLong
+            postion: latLong, 
+            //map: map, 
+            title: "My Location"
         }); 
         
         marker.setMap(map);
         map.setZoom(15);
-        map.setCenter(marker.getPostion()); 
+        //map.setCenter(marker.getPostion()); 
     }
     
     // Success callback for watching postion changes 
-    var onMapWatchSuccess = function (postion){
+ function onMapWatchSuccess (postion){
         var updatedLat = postion.coords.latitude;
         var updatedLong = postion.coords.longitude; 
         
-        if (updatedLat != Lat && updatedLong != Long){
-            Lat = updatedLat;
-            Long = updatedLong; 
+        if (updatedLat != gotLat && updatedLong != gotLong){
+            gotLat = updatedLat;
+            gotLong = updatedLong; 
             
             getMap(updatedLat, updatedLong); 
         }
