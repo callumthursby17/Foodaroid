@@ -36,6 +36,7 @@ function setupPush()
 		{
 			quality: 80,
 			correctOrientation: true,
+            saveToPhotoAlbum: true
             //destinationType: Camera.DestincationType.FILE_URI
 		}); 
 	}
@@ -48,6 +49,8 @@ function setupPush()
         var image = document.getElementById('myImage');
 		//imageCam.src = "data:image/jpeg;base64," + imageData;
         imageCam.src = imageData; 
+        alert('Image Saved'); 
+        
 	}
 
 	//Called if somthing bad happens.
