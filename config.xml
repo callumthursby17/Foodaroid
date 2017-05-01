@@ -3,7 +3,7 @@
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.lincoln.foodaroid"
     versionCode = "1"
-    version     = "1.0.5" >
+    version     = "1.0.7" >
     
     <!-- versionCode is optional and Android only -->
     <name>FoodAroid</name>
@@ -45,6 +45,9 @@
     <preference name="disable-cursor"             value="false" />          <!-- blackberry: prevents a mouse-icon/cursor from being displayed on the app -->
     <preference name="android-installLocation"    value="auto" />           <!-- android: app install location. 'auto' will choose. 'internalOnly' is device memory. 'preferExternal' is SDCard. -->
 	<preference name="splash-screen-delay" 		  value="5000" />
+    
+    <preference name="CameraUsesGeolocation" value="true"></preference>
+    
     <!--
         Define a specific version of PhoneGap to build into your app.
         <preference name="phonegap-version"       value="3.5.0" />
@@ -80,6 +83,11 @@
 		<variable name="CAMERA_USAGE_DESCRIPTION" value="To take Photos" />
 		<variable name="PHOTOLIBRARY_USAGE_DESCRIPTION" value="To get photos" /> 
 	</plugin>
+    
+    <!-- Geolocation --> 
+    <plugiin name="org.apache.cordova.geolocation">
+        <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To get users location for photos map" />
+    </plugiin>
 	
 
     <!-- Third party plugins -->

@@ -1,14 +1,17 @@
 // JavaScript Document
-$(document).on('deviceready', function deviceIsReady()
-{
+$(document).on('deviceready', function deviceIsReady() {
 	console.log('Device is ready!');
 	setupPush();
+    geolocation(); 
 	
 }); 
 
-$( document ).ready(function() {
+$(document).ready(function() {
     console.log( "ready!" );
-	setupPush(); 
+	setupPush();
+    geoLocation(); 
+    console.log("navigator.geolocation works well");
+
     //cameraGetPicture(); 
 });
 
@@ -36,9 +39,9 @@ function setupPush()
 		{
 			quality: 80,
 			correctOrientation: true,
-            saveToPhotoAlbum: true
-            //destinationType: Camera.DestincationType.FILE_URI
-		}); 
+            saveToPhotoAlbum: true,
+            CameraUsesGeolocation: true
+		});
 	}
 	
 	
@@ -61,7 +64,73 @@ function setupPush()
 
 } // End of setupPush 
 
+// Start off Geolocation function
 
+var Lat = undefined; 
+var Long = undefined; 
+
+    function geolocation()
+{
+    navigator.geolocation.getCurrentPosition(onMapSuccess, onMapError, {enableHighAccuracy: true}); 
+    
+    // Sucess callback 
+    var onMapSuccess = function (postion){
+        Lat = postion.coords.latitude;
+        Long = postion.coords.longitude; 
+        
+        getMap(Lat, Long); 
+    }
+    
+    //Get map by using coordinates 
+    function getMap (lat, long){
+        
+        var mapOptions = {
+            center: new google.maps.LatLng(0, 0),
+            zoom: 1,
+            mapTypeID: google.maps.mapTypeID.ROADMAP
+        }; 
+        
+        map = new google.maps.Map 
+        (document.getElementById("map"), mapOptions); 
+        
+        var latLong = new google.maps.LatLng(Lat, Long); 
+        
+        var marker = new google.maps.Marker({
+            postion: latLong
+        }); 
+        
+        marker.setMap(map);
+        map.setZoom(15);
+        map.setCenter(marker.getPostion()); 
+    }
+    
+    // Success callback for watching postion changes 
+    var onMapWatchSuccess = function (postion){
+        var updatedLat = postion.coords.latitude;
+        var updatedLong = postion.coords.longitude; 
+        
+        if (updatedLat != Lat && updatedLong != Long){
+            Lat = updatedLat;
+            Long = updatedLong; 
+            
+            getMap(updatedLat, updatedLong); 
+        }
+    }
+    
+    // Error callback 
+    function onMapError(error){
+        console.log('code: ' + error.code + '\n' + 
+                   'message: ' + error.message + '\n'); 
+    }
+    
+    //Watch the changing postion 
+    
+    function watchMapPostion(){
+        return navigator.geolocation.watchPosition ( onMapWatchSuccess, onMapError, {enableHighAccuracy: true}); 
+    }
+    
+    
+}// End of Geolocation functio 
 
 // Start of get photos function 
 //function cameraGetPicture()
