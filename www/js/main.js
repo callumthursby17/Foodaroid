@@ -40,12 +40,12 @@ function setupPush()
 		}); 
 	}
 	
-}	
+	
 	// Called when a photo is successfully retrieved assumes there is an image 
 	function onPhotoDataSuccess(imageData)
 	{
 		// Get image Handle 
-        var image = document.getElementById('myImage')
+        var image = document.getElementById('myImage');
 		imageCam.src = "data:image/jpeg;base64," + imageData;
 	}
 
@@ -53,11 +53,11 @@ function setupPush()
 	function onFail(message)
 	{
 		alert('Failed because: ' + message);
-	
+    }
 
 } // End of setupPush 
 
-document.getElementById("cameraGetPicture").addEventListener("click", cameraGetPicture); 
+
 
 // Start of get photos function 
 function cameraGetPicture()
