@@ -69,12 +69,12 @@ function setupPush()
 var Lat = undefined; 
 var Long = undefined; 
 
-    function geolocation()
+    function geoLocation()
 {
     navigator.geolocation.getCurrentPosition(onMapSuccess, onMapError, {enableHighAccuracy: true}); 
     
     // Sucess callback 
-    var onMapSuccess = function (postion){
+    function onMapSuccess (postion){
         Lat = postion.coords.latitude;
         Long = postion.coords.longitude; 
         
