@@ -36,7 +36,7 @@ function setupPush()
 		{
 			quality: 80,
 			correctOrientation: true,
-            destinationType: Camera.DestincationType.FILE_URI
+            //destinationType: Camera.DestincationType.FILE_URI
 		}); 
 	}
 	
@@ -46,7 +46,8 @@ function setupPush()
 	{
 		// Get image Handle 
         var image = document.getElementById('myImage');
-		imageCam.src = "data:image/jpeg;base64," + imageData;
+		//imageCam.src = "data:image/jpeg;base64," + imageData;
+        imageCam.src = imageData; 
 	}
 
 	//Called if somthing bad happens.
