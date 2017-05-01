@@ -9,7 +9,7 @@ $(document).on('deviceready', function deviceIsReady()
 $( document ).ready(function() {
     console.log( "ready!" );
 	setupPush(); 
-    cameraGetPicture(); 
+    //cameraGetPicture(); 
 });
 
 
@@ -60,23 +60,24 @@ function setupPush()
 
 
 // Start of get photos function 
-function cameraGetPicture()
-{
-    navigator.camera.get.Picture(onSuccess, onFail, 
-                                {
-        quality: 50, 
-        destinationType: Camera.DestinationType.DATA_URI,
-        sourceType: Camera.PictureSourceType.PHOTOLIBRARY
-    }); 
-    
-    function onSuccess (imageURI) 
-    {
-        var image = document.getElementById('myImage');
-        image.src = imageURI;
-    }
-    
-    function onFail (message)
-    {
-        alert('Failed because: ' + message); 
-    }
-}
+//function cameraGetPicture()
+//{
+//    navigator.camera.get.Picture(onSuccess, onFail, 
+//    {
+//        quality: 50, 
+//        destinationType: Camera.DestinationType.DATA_URI,
+//        sourceType: Camera.PictureSourceType.PHOTOLIBRARY
+//    }); 
+//    
+//    function onSuccess (imageURI) 
+//    {
+//        var image = document.getElementById('myImage');
+//        image.src = imageURI;
+//    }
+//    
+//    function onFail (message)
+//    {
+//        alert('Failed because: ' + message); 
+//    }
+//}
+//document.getElementById("cameraGetPicture").addEventListener("click", cameraGetPicture); 
