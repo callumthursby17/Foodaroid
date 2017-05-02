@@ -27,7 +27,7 @@ function setupPush()
 	$('#cameraStart').bind("click", function()
 	{
 		console.log('Camera Live'); 
-		capturePhotoWithData();
+		capturePdhotoWithData();
 	
 	}); 
 	
