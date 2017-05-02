@@ -1,8 +1,7 @@
 // JavaScript Document
 $(document).on('deviceready', function deviceIsReady() {
 	console.log('Device is ready!');
-	setupPush();
-    geolocation(); 
+
 	
 }); 
 
@@ -10,10 +9,18 @@ $(document).ready(function() {
     console.log( "ready!" );
 	setupPush();
     geoLocation(); 
-    console.log("navigator.geolocation works well");
-
-    //cameraGetPicture(); 
+    console.log("navigator.geolocation works well"); 
+    cameraGetPicture(); 
+    console.log(navigator.camera);
+    console.log("Get image works");
 });
+
+document.addEventListener("deviceready", onDeviceReady, false);
+function onDeviceReady(){
+    console.log(navigator.camera); 
+    cameraGetPicture(); 
+    console.log("Get image works");
+}
 
 
 function setupPush()
@@ -138,25 +145,58 @@ function geoLocation()
     
 }// End of Geolocation functio 
 
+
+// INSTAGRAM SHARE 
+
+
+
+// END of INSTGRAM SHARE
+
 // Start of get photos function 
-//function cameraGetPicture()
-//{
-//    navigator.camera.get.Picture(onSuccess, onFail, 
+
+	$('importImage').bind("click", function()
+	{
+		console.log('Importing Image'); 
+		cameraGetPicture();
+	
+	}); 
+
+function cameraGetPicture(selection)
+{
+    
+    var srcType = Camera.PictureSourceType.SAVEDPHOTOALBUM;
+    var options = setOptions(srcType);
+    var func = createNewFileEntry; 
+    
+    
+    
+    navigator.camera.getPicture(function cameraSuccess(imageUri){
+        
+        var instaImage = document.getElementById('insta');
+        instaImage.src = imageUri; 
+        
+    }, function cameraError(error) {
+        console.debug("Unable to obtain picture: " + error, "app");
+    }, options); 
+    
+  
+    
+    //navigator.camera.getPicture(onSuccess, onFail, 
 //    {
 //        quality: 50, 
 //        destinationType: Camera.DestinationType.DATA_URI,
 //        sourceType: Camera.PictureSourceType.PHOTOLIBRARY
 //    }); 
-//    
-//    function onSuccess (imageURI) 
-//    {
-//        var image = document.getElementById('myImage');
-//        image.src = imageURI;
-//    }
-//    
-//    function onFail (message)
-//    {
-//        alert('Failed because: ' + message); 
-//    }
-//}
-//document.getElementById("cameraGetPicture").addEventListener("click", cameraGetPicture); 
+    
+   // function onSuccess (imageURI) 
+   // {
+   //     var image = document.getElementById('insta');
+  //      image.src = imageURI;
+  //  }
+ //   
+ //   function onFail (message)
+ //   {
+ //       alert('Failed because: ' + message); 
+  //  }
+}
+// document.getElementById("cameraGetPicture").addEventListener("click", cameraGetPicture); 
