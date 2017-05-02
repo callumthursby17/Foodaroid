@@ -91,7 +91,9 @@
         <variable name="GEOLOCATION_USAGE_DESCRIPTION" value="To get users location for photos map" />
     </plugin>
     
-    
+    <plugin name="cordova-plugin-googlemaps">
+        <variable name="API_KEY_FOR_IOS" value="AIzaSyCWsbTfiPvU52P6zfyWyKJLdFUJqAY2WCw"/>
+    </plugin>
 	
 
     <!-- Third party plugins -->
