@@ -154,20 +154,20 @@ function geoLocation()
 
 // Start of get photos function 
 
-	$('importImage').bind("click", function()
+	$('#importImage').bind("click", function()
 	{
-		console.log('Importing Image'); 
+		console.log("Importing Image"); 
 		cameraGetPicture();
 	
 	}); 
 
-function cameraGetPicture(selection)
+function cameraGetPicture()
 {
     
-    //var srcType = camera.PictureSourceType.SAVEDPHOTOALBUM;
-    var srcType = camera.PictureSourceType.SAVEDPHOTOALBUM;
-    var options = setOptions(srcType);
-    var func = createNewFileEntry;
+/*    //var srcType = camera.PictureSourceType.SAVEDPHOTOALBUM;
+    var srcType = camera.PictureSourceType.PHOTOLIBRARY;
+    //var options = setOptions(srcType);
+    //var func = createNewFileEntry;
 
     navigator.camera.getPicture(function cameraSuccess(imageUri) {
 
@@ -178,24 +178,24 @@ function cameraGetPicture(selection)
         console.debug("Unable to obtain picture: " + error, "app");
 
     }, options);
-  
+  */
     
-    //navigator.camera.getPicture(onSuccess, onFail, 
-//    {
-//        quality: 50, 
-//        destinationType: Camera.DestinationType.DATA_URI,
-//        sourceType: Camera.PictureSourceType.PHOTOLIBRARY
-//    }); 
+    navigator.camera.getPicture(onSuccess, onFail, 
+    {
+        quality: 50, 
+        destinationType: Camera.DestinationType.DATA_URI,
+        sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+    }); 
     
-   // function onSuccess (imageURI) 
-   // {
-   //     var image = document.getElementById('insta');
-  //      image.src = imageURI;
-  //  }
- //   
- //   function onFail (message)
- //   {
- //       alert('Failed because: ' + message); 
-  //  }
+    function onSuccess (imageURI) 
+    {
+        var image = document.getElementById('insta');
+        image.src = "data:image/jpeg;based64," + imageURI;
+    }
+    
+    function onFail (message)
+    {
+        alert('Failed because: ' + message); 
+    }
 }
 // document.getElementById("cameraGetPicture").addEventListener("click", cameraGetPicture); 
