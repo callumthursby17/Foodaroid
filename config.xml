@@ -3,7 +3,7 @@
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.lincoln.foodaroid"
     versionCode = "1"
-    version     = "1.1.4" >
+    version     = "1.1.5" >
 
     
     <!-- versionCode is optional and Android only -->
@@ -70,6 +70,7 @@
     <plugin name="cordova-plugin-dialogs" />
 	<plugin name="cordova-plugin-vibration" />
     <plugin name="cordova-plugin-geolocation" />
+    <plugin name="cordova-plugin-googlemaps"/>
     <plugin name="cordova-plugin-inappbrowser" />
     <!--<plugin name="cordova-plugin-media" />-->
     <plugin name="cordova-plugin-network-information" />
