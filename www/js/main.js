@@ -15,12 +15,14 @@ $(document).ready(function() {
     console.log("Get image works");
 });
 
+/*
 document.addEventListener("deviceready", onDeviceReady, false);
 function onDeviceReady(){
     console.log(navigator.camera); 
     cameraGetPicture(); 
     console.log("Get image works");
 }
+*/
 
 
 function setupPush()
@@ -154,31 +156,11 @@ function geoLocation()
 
 // Start of get photos function 
 
-	$('#importImage').bind("click", function()
-	{
-		console.log("Importing Image"); 
-		cameraGetPicture();
-	
-	}); 
+
 
 function cameraGetPicture()
 {
     
-/*    //var srcType = camera.PictureSourceType.SAVEDPHOTOALBUM;
-    var srcType = camera.PictureSourceType.PHOTOLIBRARY;
-    //var options = setOptions(srcType);
-    //var func = createNewFileEntry;
-
-    navigator.camera.getPicture(function cameraSuccess(imageUri) {
-
-        var image = document.getElementById('insta');
-        image.src = imageURI;
-
-    }, function cameraError(error) {
-        console.debug("Unable to obtain picture: " + error, "app");
-
-    }, options);
-  */
     
     navigator.camera.getPicture(onSuccess, onFail, 
     {
