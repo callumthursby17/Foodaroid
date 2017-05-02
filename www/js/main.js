@@ -10,8 +10,7 @@ $(document).ready(function() {
 	setupPush();
     geoLocation(); 
     console.log("navigator.geolocation works well"); 
-    cameraGetPicture(); 
-    console.log(navigator.camera);
+    imageSelect();  
     console.log("Get image works");
 });
 
@@ -156,28 +155,39 @@ function geoLocation()
 
 // Start of get photos function 
 
+function imageSelect(){
+    
+        var userInput = $('#importImage');
+
+        //Ties a JS function to the click event of the button
+        $('#importImage').bind("click", function()
+        {
+            console.log('User wants to import an image '); 
+            cameraGetPicture(); 
+        }); 
 
 
-function cameraGetPicture()
-{
-    
-    
-    navigator.camera.getPicture(onSuccess, onFail, 
+    function cameraGetPicture()
     {
-        quality: 50, 
-        destinationType: Camera.DestinationType.DATA_URI,
-        sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
-    }); 
-    
-    function onSuccess (imageURI) 
-    {
-        var image = document.getElementById('insta');
-        image.src = "data:image/jpeg;based64," + imageURI;
-    }
-    
-    function onFail (message)
-    {
-        alert('Failed because: ' + message); 
+
+
+        navigator.camera.getPicture(onSuccess, onFail, 
+        {
+            quality: 50, 
+            destinationType: Camera.DestinationType.DATA_URI,
+            sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+        }); 
+
+        function onSuccess (imageURI) 
+        {
+            var image = document.getElementById('insta');
+            image.src = "data:image/jpeg;based64," + imageURI;
+        }
+
+        function onFail (message)
+        {
+            alert('Failed because: ' + message); 
+        }
     }
 }
 // document.getElementById("cameraGetPicture").addEventListener("click", cameraGetPicture); 
