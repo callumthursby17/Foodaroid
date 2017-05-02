@@ -164,21 +164,20 @@ function geoLocation()
 function cameraGetPicture(selection)
 {
     
-    var srcType = Camera.PictureSourceType.SAVEDPHOTOALBUM;
+    //var srcType = camera.PictureSourceType.SAVEDPHOTOALBUM;
+    var srcType = camera.PictureSourceType.SAVEDPHOTOALBUM;
     var options = setOptions(srcType);
-    var func = createNewFileEntry; 
-    
-    
-    
-    navigator.camera.getPicture(function cameraSuccess(imageUri){
-        
-        var instaImage = document.getElementById('insta');
-        instaImage.src = imageUri; 
-        
+    var func = createNewFileEntry;
+
+    navigator.camera.getPicture(function cameraSuccess(imageUri) {
+
+        var image = document.getElementById('insta');
+        image.src = imageURI;
+
     }, function cameraError(error) {
         console.debug("Unable to obtain picture: " + error, "app");
-    }, options); 
-    
+
+    }, options);
   
     
     //navigator.camera.getPicture(onSuccess, onFail, 
