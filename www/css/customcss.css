@@ -10,8 +10,11 @@
     right: 20px; 
 }
 
-#map {
-	height: 200px; 
+#googleMap {
+	height: 430px; 
+    width: 300px;  
+   /* position: relative; */ 
+    
 }
 
 

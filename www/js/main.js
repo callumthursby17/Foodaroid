@@ -69,7 +69,7 @@ function setupPush()
 var Lat = undefined; 
 var Long = undefined; 
 
-    function geoLocation()
+function geoLocation()
 {
     navigator.geolocation.getCurrentPosition(onMapSuccess, onMapError, {enableHighAccuracy: true}); 
     
@@ -77,6 +77,8 @@ var Long = undefined;
     function onMapSuccess (postion){
         Lat = postion.coords.latitude;
         Long = postion.coords.longitude; 
+        
+        console.log("Lat and Log has been received")
         
         getMap(Lat, Long); 
     }
@@ -93,7 +95,7 @@ var Long = undefined;
         }; 
         
          var map = new google.maps.Map 
-        (document.getElementById('map'), mapOptions); 
+        (document.getElementById('googleMap'), mapOptions); 
         
        
         
