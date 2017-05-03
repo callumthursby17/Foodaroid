@@ -13,17 +13,10 @@ $(document).ready(function() {
     imageSelect();  
     console.log("Get image works");
     instagramShare(); 
-    console.log("Instgram Feature online ")
+    console.log("Instgram Feature online ");
+    instagramSearch();
+    console.log("Instagram Search is Active"); 
 });
-
-/*
-document.addEventListener("deviceready", onDeviceReady, false);
-function onDeviceReady(){
-    console.log(navigator.camera); 
-    cameraGetPicture(); 
-    console.log("Get image works");
-}
-*/
 
 
 function setupPush()
@@ -242,4 +235,67 @@ function imageSelect(){
         }
     }
 }
-// document.getElementById("cameraGetPicture").addEventListener("click", cameraGetPicture); 
+
+// INSTAGRAM SEARCH 
+function instagramSearch (){
+
+     var params = {
+            // Request parameters
+            "q": "chips",
+            "count": "10",
+            //"offset": "0",
+            //"mkt": "en-us",
+           // "safeSearch": "Moderate",
+        };
+    
+     //Ties a JS function to the click event of the button
+        $('#submitSearch').bind("click", function(e)
+        {
+            console.log('User wants to search for an image '); 
+            e.preventDefault(); 
+            
+            // Getting the value in the user search box and storing inside a variable
+            var tagName = $('#userSearch').val(); 
+            
+            if (typeof(Storage) !== "undefined"){
+                
+                       
+            localStorage.suggestedTag = "#" + tagName; 
+                
+                document.getElementById('userTags').innerHTML = localStorage.getItem("suggestedTag")
+            
+            } else {
+                alert("No web storage"); 
+            }
+            
+ 
+/*             $.ajax({
+            url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?" + $.param(params),
+            beforeSend: function(xhrObj){
+                // Request headers
+                xhrObj.setRequestHeader("Ocp-Apim-Subscription-Key","f5e1ff6b17924fe6a6b14f931377d66f");
+            },
+            type: "GET",
+            // Request body
+            data: "{body}",
+        })
+        .done(function(data) {
+            alert("success");
+                 
+                for (var i = 0; i < data.length; i++){
+                    imageUrl = data[i].value.thumbnailUrl; 
+                    var output = document.getElementById('#imageResults');
+                    output.src = imageUrl; 
+                }
+        })
+        .fail(function() {
+            alert("error");
+        });*/
+    
+        
+        
+        });    
+            
+            
+ }; 
+ 

@@ -25,6 +25,7 @@
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
 
+
     
     <!-- Google Maps --> 
      <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWsbTfiPvU52P6zfyWyKJLdFUJqAY2WCw"></script>
@@ -198,13 +199,21 @@
         
         <h3>Search Images.... </h3>
         
-        <img src="ASSETS/images/search-field.jpg" width="300px" id="searchBox"/>
+        <form>
+            <input type="text" id="userSearch"/>
+        </form>
+        <br>
+        <button id="submitSearch">Find images</button><br>
         
-        <ul id="hashtags">
-                <li>#Food</li>
-                <li>#Fish</li>
-            
+        <div>Pervious Search Tags... 
+            <ul>
+                <li id="userTags" style="list-style-type: none; ">Please search to retrieve last searched tag. </li>
             </ul>
+        </div>
+        
+      
+        
+        <img id="imageResults" src=""/>
         
     </div> <!-- End Content --> 
 
