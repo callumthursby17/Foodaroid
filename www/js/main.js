@@ -182,7 +182,7 @@ Instagram.isInstalled(function (err, installed){
                 console.log("Shared");
                 alert('Image has been shared'); 
             }
-        }
+        });
         
         
     } else {
