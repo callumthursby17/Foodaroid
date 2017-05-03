@@ -184,7 +184,7 @@ Instagram.isInstalled(function (err, installed){
     } // End of detectInsta Function 
     
     function instgramUpload(){
-                Instgram.share('insta', function (err){
+                Instagram.share('insta', function (err){
             if (err){
                 console.log("not shared"); 
                 alert('Image has not been shared');
