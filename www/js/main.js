@@ -165,7 +165,7 @@ function instagramShare() {
 	}); 
 
     
-function detectInsta (){
+function detectInsta(){
         
     
 // Detect if the device has the instgram app 
@@ -173,8 +173,7 @@ Instagram.isInstalled(function (err, installed){
     if(installed) {
         console.log("Instgram is", installed); 
         // alert('Instagram Installed');
-        instgramShare(); 
-
+        instgramUpload(); 
         
     } else {
         console.log("Instgram is not installed");
@@ -184,7 +183,7 @@ Instagram.isInstalled(function (err, installed){
         
     } // End of detectInsta Function 
     
-    function instgramShare (){
+    function instgramUpload(){
                 Instgram.share('#insta', function (err){
             if (err){
                 console.log("not shared"); 
