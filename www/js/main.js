@@ -175,7 +175,9 @@ function imageSelect(){
         {
             quality: 50, 
             destinationType: Camera.DestinationType.DATA_URI,
-            sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY
+            sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY,
+                                    options.targetHeight = 100,
+                                    options.targetWidth = 100
         }); 
 
         function onSuccess (imageURI) 
