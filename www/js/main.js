@@ -172,9 +172,20 @@ function detectInsta (){
 Instagram.isInstalled(function (err, installed){
     if(installed) {
         console.log("Instgram is", installed); 
-        alert('Instagram Installed');
+        // alert('Instagram Installed');
+        instgramShare(); 
+
         
-        Instgram.share('#insta', function (err){
+    } else {
+        console.log("Instgram is not installed");
+        alert('Please Install Instgram to use this feature');
+    }
+        }); 
+        
+    } // End of detectInsta Function 
+    
+    function instgramShare (){
+                Instgram.share('#insta', function (err){
             if (err){
                 console.log("not shared"); 
                 alert('Image has not been shared');
@@ -184,14 +195,7 @@ Instagram.isInstalled(function (err, installed){
             }
         });
         
-        
-    } else {
-        console.log("Instgram is not installed");
-        alert('Please Install Instgram to use this feature');
     }
-        }); 
-        
-    } 
     
 } 
 
