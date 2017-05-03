@@ -172,19 +172,22 @@ function detectInsta(){
 Instagram.isInstalled(function (err, installed){
     if(installed) {
         console.log("Instgram is", installed); 
-        // alert('Instagram Installed');
+        alert('Instagram Installed');
         instgramUpload(); 
         
     } else {
-        console.log("Instgram is not installed");
-        alert('Please Install Instgram to use this feature');
+        console.log("Instagram is not installed");
+        alert('Please Install Instagram to use this feature');
     }
         }); 
         
     } // End of detectInsta Function 
     
     function instgramUpload(){
-                Instagram.share('insta', function (err){
+        
+        var instgramImage = document.getElementById('#insta');
+        
+                Instagram.share(instgramImage, function (err){
             if (err){
                 console.log("not shared"); 
                 alert('Image has not been shared');
