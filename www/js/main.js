@@ -173,6 +173,18 @@ Instagram.isInstalled(function (err, installed){
     if(installed) {
         console.log("Instgram is", installed); 
         alert('Instagram Installed');
+        
+        Instgram.share('#insta', function (err){
+            if (err){
+                console.log("not shared"); 
+                alert('Image has not been shared');
+            } else {
+                console.log("Shared");
+                alert('Image has been shared'); 
+            }
+        }
+        
+        
     } else {
         console.log("Instgram is not installed");
         alert('Please Install Instgram to use this feature');
