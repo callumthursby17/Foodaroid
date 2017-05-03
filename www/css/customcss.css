@@ -25,6 +25,14 @@
  
 }
 
+
+/* Search page */ 
+#imageResults {
+	background-color: white; 
+    width: 300px; 
+    height: 130px; 
+}
+
 #hashtags { 
     display: block;
     font-size: 1em;

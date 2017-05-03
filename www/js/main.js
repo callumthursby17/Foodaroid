@@ -269,7 +269,7 @@ function instagramSearch (){
             }
             
  
-/*             $.ajax({
+             $.ajax({
             url: "https://api.cognitive.microsoft.com/bing/v5.0/images/search?" + $.param(params),
             beforeSend: function(xhrObj){
                 // Request headers
@@ -282,15 +282,17 @@ function instagramSearch (){
         .done(function(data) {
             alert("success");
                  
+                 console.log(data); 
+                 
                 for (var i = 0; i < data.length; i++){
-                    imageUrl = data[i].value.thumbnailUrl; 
+                    imageUrl = data.value[0].thumbnailUrl; 
                     var output = document.getElementById('#imageResults');
-                    output.src = imageUrl; 
+                    output = imageUrl; 
                 }
         })
         .fail(function() {
             alert("error");
-        });*/
+        });
     
         
         
