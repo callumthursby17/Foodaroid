@@ -144,7 +144,7 @@ function geoLocation()
     }
     
     
-}// End of Geolocation functio 
+}// End of Geolocation function 
 
 
 // INSTAGRAM SHARE 
@@ -181,7 +181,7 @@ function imageSelect(){
         function onSuccess (imageURI) 
         {
             var image = document.getElementById('insta');
-            image.src = "data:image/jpeg;based64," + imageURI;
+            image.src = imageURI;
         }
 
         function onFail (message)
