@@ -17,6 +17,13 @@
     
 }
 
+/* Instagram Share page */
+#insta {
+	background-color: white; 
+    height: 300px;
+    width: 300px; 
+ 
+}
 
 #hashtags { 
     display: block;
