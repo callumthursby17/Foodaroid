@@ -12,6 +12,8 @@ $(document).ready(function() {
     console.log("navigator.geolocation works well"); 
     imageSelect();  
     console.log("Get image works");
+    instagramShare(); 
+    console.log("Instgram Feature online ")
 });
 
 /*
@@ -149,6 +151,37 @@ function geoLocation()
 
 // INSTAGRAM SHARE 
 
+
+function instagramShare() {
+    
+	var imageCam = $('#imagCam');
+	
+	//Ties a JS function to the click event of the button
+	$('#instagramShare').bind("click", function()
+	{
+		console.log('Sharing'); 
+		detectInsta();
+	
+	}); 
+
+    
+function detectInsta (){
+        
+    
+// Detect if the device has the instgram app 
+Instagram.isInstalled(function (err, installed){
+    if(installed) {
+        console.log("Instgram is", installed); 
+        alert('Instagram Installed');
+    } else {
+        console.log("Instgram is not installed");
+        alert('Please Install Instgram to use this feature');
+    }
+        }); 
+        
+    } 
+    
+} 
 
 
 // END of INSTGRAM SHARE

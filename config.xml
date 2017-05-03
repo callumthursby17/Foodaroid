@@ -3,7 +3,7 @@
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.lincoln.foodaroid"
     versionCode = "1"
-    version     = "1.1.14" >
+    version     = "1.2.0" >
 
     
     <!-- versionCode is optional and Android only -->
@@ -74,6 +74,7 @@
     <plugin name="cordova-plugin-media" />
     <plugin name="cordova-plugin-network-information" />
     <plugin name="cordova-plugin-splashscreen" />
+    <plugin name="cordova-instagram-plugin"/>
 	<!--<plugin name="phonegap-plugin-push" />-->
 	
     <!-- Third party plugins -->
