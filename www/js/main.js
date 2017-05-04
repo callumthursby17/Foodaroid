@@ -301,6 +301,7 @@ function instagramSearch (){
             localStorage.suggestedTag = "#" + tagName; 
                 
                 document.getElementById('userTags').innerHTML = localStorage.getItem("suggestedTag")
+                document.getElementById('userTagsSearch').innerHTML = localStorage.getItem("suggestedTag")
             
             } else {
                 alert("No web storage"); 
