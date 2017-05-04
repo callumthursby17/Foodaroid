@@ -36,7 +36,6 @@
         height: 565px; 
         width: 380px;  
         margin-left: 0px; 
-       /* position: relative; */ 
 
     }
 
@@ -47,6 +46,14 @@
         width: 380px; 
 
     }
+    
+   /* My Photos Page*/
+    #myImage {
+	background-color: white; 
+        height: 280px;
+        width: 380px; 
+    }
+    
 
     /* Search page */ 
     #imageResults {

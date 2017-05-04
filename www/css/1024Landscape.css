@@ -59,6 +59,14 @@
         width: 950px; 
 
     }
+    
+    
+    /* My Photos Page*/
+    #myImage {
+	background-color: white; 
+        height: 300px;
+        width: 1350px; 
+    }
 
     /* Search page */ 
     #imageResults {

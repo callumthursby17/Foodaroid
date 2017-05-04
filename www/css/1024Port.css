@@ -34,8 +34,6 @@
      #footerNav {
 	position: relative; 
             top: 220px; 
-         
-   
             
     }
     
@@ -51,8 +49,6 @@
         height: 1170px; 
         width: 875px;  
         margin-left: 10px; 
-       /* position: relative; */ 
-
     }
 
     /* Instagram Share page */
@@ -61,6 +57,13 @@
         height: 820px;
         width: 880px; 
 
+    }
+    
+       /* My Photos Page*/
+    #myImage {
+	background-color: white; 
+        height: 750px;
+        width: 1330px; 
     }
 
     /* Search page */ 

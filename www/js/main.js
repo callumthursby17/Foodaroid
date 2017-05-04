@@ -236,6 +236,44 @@ function imageSelect(){
     }
 }
 
+// MY PHOTOS PAGE 
+function imageSelect(){
+    
+        var userInput = $('#cameraGetPicture');
+
+        //Ties a JS function to the click event of the button
+        $('#cameraGetPicture').bind("click", function()
+        {
+            console.log('User wants to import an image '); 
+            cameraGetPicture2(); 
+        }); 
+
+
+    function cameraGetPicture2()
+    {
+
+
+        navigator.camera.getPicture(onSuccess, onFail, 
+        {
+            quality: 50, 
+            destinationType: Camera.DestinationType.DATA_URI,
+            sourceType: navigator.camera.PictureSourceType.PHOTOLIBRARY,
+                                    
+        }); 
+
+        function onSuccess (imageURI) 
+        {
+            var image = document.getElementById('myImage');
+            image.src = imageURI;
+        }
+
+        function onFail (message)
+        {
+            alert('Failed because: ' + message); 
+        }
+    }
+}
+
 // INSTAGRAM SEARCH 
 function instagramSearch (){
 
