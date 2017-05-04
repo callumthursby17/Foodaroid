@@ -1,0 +1,44 @@
+@media(min-width: 320px) and (max-width: 374px){
+
+    /* Index page */ 
+    #cameraStart {
+        margin-left: 10px; 
+ 
+    }
+    
+    #camImgCon {
+	   width: 250px;
+       height: 430px; 
+    }
+    
+    #camImgCon img {
+	width: 100%;
+    height: 100%; 
+    }
+
+    /* Map Page */
+
+    #googleMap {
+        height: 430px; 
+        width: 300px;  
+       /* position: relative; */ 
+
+    }
+
+    /* Instagram Share page */
+    #insta {
+        background-color: white; 
+        height: 240px;
+        width: 300px; 
+
+    }
+
+    /* Search page */ 
+    #imageResults {
+        background-color: white; 
+        width: 300px; 
+        height: 130px; 
+    }
+
+
+}

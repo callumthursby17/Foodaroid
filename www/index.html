@@ -18,8 +18,14 @@
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css"/>
     <link rel="stylesheet" href="css/foodAroid.css"/>
     <link rel="stylesheet" href="css/jquery.mobile.icons.min.css"/>
-    <link rel="stylesheet" href="css/customcss.css"/>
-	
+    <link rel="stylesheet" href="css/320.css"/>
+    <link rel="stylesheet" href="css/375.css"/> 
+    <link rel="stylesheet" href="css/414.css"/>
+    <link rel="stylesheet" href="css/768.css"/>
+    <link rel="stylesheet" href="css/1024Port.css"/>
+    <link rel="stylesheet" href="css/1024Landscape.css"/> 
+    <link rel="stylesheet" href="css/1366Landscape.css"/>
+    
     <!--link to other scripts in js folder, i.e locationtracker.js-->
     <script type="text/javascript" src="js/jquery-2.2.2.min.js"></script>
     <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
@@ -43,16 +49,18 @@
       
     </div> <!-- header end --> 
     
-    <div data-role="content"> <!-- Start Content --> 
+    <div data-role="content" id="content"> <!-- Start Content --> 
         
-        <img src="ASSETS/images/cameraStart.png" height="427px" width="250px" alt="Camera Start Button" id="cameraStart" > 
+        <div id="camImgCon">
+            <img src="ASSETS/images/cameraStart.png"  alt="Camera Start Button" id="cameraStart" > 
+        </div>
         
-        <img id="myImage">
+        
     </div> <!-- End Content --> 
 
-     <div data-role="footer"> <!-- Footer start -->
+     <div data-role="footer"  id="footerNav"> <!-- Footer start -->
      
-     	  <div data-role="navbar"  data-iconpos="top"> <!-- Start Nav Bar -->
+     	  <div data-role="navbar"  data-iconpos="top">  <!-- Start Nav Bar -->
             <ul>
                 <li><a href="#search" data-transition="slide" data-direction="reverse" data-icon="search">Search</a></li>
                 <li><a href="#instagram" data-transition="slide" data-direction="reverse" data-icon="action">Insta</a></li>
@@ -162,7 +170,7 @@
         
         <img id="insta" src="">
         
-        <canvas id="insta" width="100" height="100"></canvas>
+        <!--<canvas id="insta" width="100" height="100"></canvas>--> 
         
         <button id="instagramShare">Share Image to Instagram</button>
         
@@ -205,7 +213,7 @@
         <br>
         <button id="submitSearch">Find images</button><br>
         
-        <div>Pervious Search Tags... 
+        <div id="tags">Pervious Search Tags... 
             <ul>
                 <li id="userTags" style="list-style-type: none; ">Please search to retrieve last searched tag. </li>
             </ul>
