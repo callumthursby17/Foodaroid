@@ -3,7 +3,7 @@
     xmlns:gap   = "http://phonegap.com/ns/1.0"
     id          = "com.lincoln.foodaroid"
     versionCode = "1"
-    version     = "1.5.1" >
+    version     = "1.5.2" >
 
     
     <!-- versionCode is optional and Android only -->
@@ -94,6 +94,7 @@
     
     <plugin name="cordova-plugin-googlemaps">
         <variable name="API_KEY_FOR_IOS" value="AIzaSyCWsbTfiPvU52P6zfyWyKJLdFUJqAY2WCw"/>
+        <variable name="API_KEY_FOR_ANDROID" value="AIzaSyCWsbTfiPvU52P6zfyWyKJLdFUJqAY2WCw"/>
     </plugin>
 	
 
