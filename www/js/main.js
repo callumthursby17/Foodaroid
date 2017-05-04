@@ -12,6 +12,8 @@ $(document).ready(function() {
     console.log("navigator.geolocation works well"); 
     imageSelect();  
     console.log("Get image works");
+    imageSelect2();  
+    console.log("Get image 2 works");
     instagramShare(); 
     console.log("Instgram Feature online ");
     instagramSearch();
@@ -237,7 +239,7 @@ function imageSelect(){
 }
 
 // MY PHOTOS PAGE 
-function imageSelect(){
+function imageSelect2(){
     
         var userInput = $('#cameraGetPicture');
 
